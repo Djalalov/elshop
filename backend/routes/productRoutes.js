@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const {
-  getAllProducts,
-  getProductById,
+	getAllProducts,
+	getProductById,
 } = require("../controller/productController");
 //@desc GET all the products from DB
 //@route GET /api/products
@@ -19,4 +19,4 @@ router.get("/:id", getProductById);
 
 router.get("/", (req, res) => {}); */
 
-model.exports = router;
+module.exports = router;
