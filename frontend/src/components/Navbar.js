@@ -1,7 +1,7 @@
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 
-function Navbar() {
+function Navbar({ click }) {
 	return (
 		<nav className="navbar">
 			{/*logo*/}
@@ -16,7 +16,7 @@ function Navbar() {
 						<i className="fas fa-shopping-cart"></i>
 						<span>
 							Cart
-							<span className="cartlogo_badge">@</span>
+							<span className="cartlogo_badge">0</span>
 						</span>
 					</Link>
 				</li>
@@ -24,8 +24,9 @@ function Navbar() {
 					<Link to="/">Shop</Link>
 				</li>
 			</ul>
+
 			{/*Hamburger menu*/}
-			<div className="hamburger_menu">
+			<div className="hamburger_menu" onClick={click}>
 				<div></div>
 				<div></div>
 				<div></div>
