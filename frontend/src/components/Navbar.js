@@ -5,8 +5,10 @@ function Navbar({ click }) {
 	return (
 		<nav className="navbar">
 			{/*logo*/}
-			<div className="navbar_logo">
-				<h2>Mern Shopping Carts</h2>
+			<div>
+				<Link to="/" className="navbar_logo">
+					<span>Mern Shopping</span>
+				</Link>
 			</div>
 
 			{/*links*/}
@@ -21,7 +23,7 @@ function Navbar({ click }) {
 					</Link>
 				</li>
 				<li>
-					<Link to="/">Shop</Link>
+					<span className="shopBtn">Login</span>
 				</li>
 			</ul>
 

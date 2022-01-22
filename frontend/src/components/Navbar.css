@@ -1,23 +1,34 @@
 .navbar {
-	height: 110px;
+	height: 80px;
 	width: 100%;
 	background-color: #171717;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 1.3rem 1rem;
+	padding: 2.5rem;
 	z-index: 50;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
 }
 
 .navbar_logo {
-	color: #f4f4f4;
-	font-size: 1.4rem;
+	text-decoration: none;
+	font-size: 2.2rem;
 	cursor: pointer;
+	color: #f4f4f4;
+	font-weight: bold;
+	margin: 4px auto;
 }
+
 .navbar_links {
 	display: flex;
 	list-style: none;
 	align-items: center;
+}
+.navbar_links > li {
+	padding: 1rem;
+	padding-left: 0px;
 }
 
 .navbar_links > li > a {
@@ -31,12 +42,12 @@
 .navbar_links > li > a > span {
 	display: flex;
 	align-items: center;
-	margin-left: 8px;
+	margin: 4px auto;
 }
 
 .cart_link {
 	background: #333;
-	padding: 10px;
+	padding: 6px;
 	border-radius: 8px;
 }
 
@@ -46,8 +57,8 @@
 }
 
 .cartlogo_badge {
-	width: 40px;
-	height: 40px;
+	width: 30px;
+	height: 25px;
 	background: #f4f4f4;
 	color: #171717;
 	border-radius: 50px;
@@ -58,6 +69,15 @@
 	text-align: center;
 	font-size: 1rem;
 }
+.shopBtn {
+	width: 30px;
+	height: 25px;
+	background-color: rgb(245, 196, 60);
+	padding: 12px;
+	border-radius: 8px;
+	font-weight: bold;
+	color: rgba(0, 0, 0, 0.9);
+}
 
 .hamburger_menu {
 	width: 30px;
@@ -66,6 +86,7 @@
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
+
 	cursor: pointer;
 }
 

@@ -13,6 +13,16 @@ const CartScreen = () => {
 				<CartItem />
 				<CartItem />
 				<CartItem />
+				<CartItem />
+				<CartItem />
+				<CartItem />
+				<CartItem />
+				<CartItem />
+				<CartItem />
+				<CartItem />
+				<CartItem />
+				<CartItem />
+				<CartItem />
 			</div>
 
 			<div className="cartscreen_right">
