@@ -1,9 +1,28 @@
 import "./Navbar.css";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function Navbar({ click }) {
+	const [scrolled, setScrolled] = React.useState(false);
+	const handleScroll = () => {
+		const offset = window.scrollY;
+		if (offset > 0) {
+			setScrolled(true);
+		} else {
+			setScrolled(false);
+		}
+	};
+
+	useEffect(() => {
+		window.addEventListener("scroll", handleScroll);
+	});
+	let navbarClasses = ["navbar"];
+	if (scrolled) {
+		navbarClasses.push("scrolled");
+	}
+
 	return (
-		<nav className="navbar">
+		<nav className={navbarClasses.join(" ")}>
 			{/*logo*/}
 			<div>
 				<Link to="/" className="navbar_logo">

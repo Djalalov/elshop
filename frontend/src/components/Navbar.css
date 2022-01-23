@@ -1,15 +1,20 @@
 .navbar {
 	height: 80px;
 	width: 100%;
+	box-sizing: border-box;
 	background-color: #171717;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 2.5rem;
-	z-index: 50;
 	overflow: hidden;
+	transition: all 0.7s ease-in;
+}
+.scrolled {
 	position: fixed;
 	top: 0;
+	left: 0;
+	opacity: 0.8;
 }
 
 .navbar_logo {
@@ -19,6 +24,12 @@
 	color: #f4f4f4;
 	font-weight: bold;
 	margin: 4px auto;
+}
+
+.sticky {
+	position: fixed;
+	top: 0;
+	width: 100%;
 }
 
 .navbar_links {
