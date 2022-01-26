@@ -1,6 +1,6 @@
 import "./App.css";
 import { useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 //Screens
 import HomeScreen from "./screens/HomeScreen";
@@ -16,16 +16,18 @@ function App() {
 	const [sideToggle, setsideToggle] = useState(false);
 	return (
 		<>
-			<Navbar click={() => setsideToggle(true)} />
-			<SideDrawer show={sideToggle} click={() => setsideToggle(false)} />
-			<Backdrop show={sideToggle} click={() => setsideToggle(false)} />
-			<main>
-				<Routes>
-					<Route exact path="/" element={<HomeScreen />} />
-					<Route path="/product/:id" element={<ProductScreen />} />
-					<Route path="/cart" element={<CartScreen />} />
-				</Routes>
-			</main>
+			<BrowserRouter>
+				<Navbar click={() => setsideToggle(true)} />
+				<SideDrawer show={sideToggle} click={() => setsideToggle(false)} />
+				<Backdrop show={sideToggle} click={() => setsideToggle(false)} />
+				<main>
+					<Routes>
+						<Route exact path="/" element={<HomeScreen />} />
+						<Route path="/product/:id" element={<ProductScreen />} />
+						<Route path="/cart" element={<CartScreen />} />
+					</Routes>
+				</main>
+			</BrowserRouter>
 		</>
 	);
 }

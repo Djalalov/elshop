@@ -8,6 +8,7 @@
 	background: #fff;
 	border-radius: 2px;
 	place-items: center;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
 .cartitem_name {

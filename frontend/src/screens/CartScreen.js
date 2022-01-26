@@ -1,4 +1,5 @@
 import "./CartScreen.css";
+import ScrollUp from "../components/scrollUp";
 
 //Components
 import CartItem from "../components/CartItem";
@@ -8,6 +9,8 @@ const CartScreen = () => {
 		<div className="cartscreen">
 			<div className="cartscreen_left">
 				<h2>Shopping Cart</h2>
+				<CartItem />
+				<CartItem />
 				<CartItem />
 				<CartItem />
 				<CartItem />
@@ -33,6 +36,9 @@ const CartScreen = () => {
 				<div>
 					<button>Proceed To Checkout</button>
 				</div>
+			</div>
+			<div>
+				<ScrollUp />
 			</div>
 		</div>
 	);

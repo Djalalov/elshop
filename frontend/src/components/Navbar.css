@@ -13,7 +13,6 @@
 .scrolled {
 	position: fixed;
 	top: 0;
-	left: 0;
 	opacity: 0.8;
 }
 
@@ -43,6 +42,7 @@
 }
 
 .navbar_links > li > a {
+	padding-left: 10px;
 	text-decoration: none;
 	color: #f4f4f4;
 	font-size: 1.2rem;
@@ -51,6 +51,8 @@
 }
 
 .navbar_links > li > a > span {
+	padding-right: 3px;
+	padding-left: 8px;
 	display: flex;
 	align-items: center;
 	margin: 4px auto;
@@ -63,7 +65,7 @@
 }
 
 .cart_link:hover {
-	background: #dd2121c2;
+	background: #d64040c2;
 	color: #f4f4f4;
 }
 

@@ -1,23 +1,17 @@
 import "./Product.css";
 import { Link } from "react-router-dom";
 
-const Product = () => {
+const Product = (imageUrl, name, price, description, productId) => {
 	return (
 		<div className="product">
-			<img
-				src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-				alt="product name"
-			/>
+			<img src={imageUrl} alt={name} />
 
 			<div className="product_info">
-				<p className="info_name">Product 1</p>
-				<p className="info_description">
-					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum,
-					eius architecto sint fuga aliquid earum?
-				</p>
+				<p className="info_name">{name}</p>
+				<p className="info_description">{description.substring(0, 100)} ... </p>
 
-				<p className="info_price">$500</p>
-				<Link to={`/product/${1111}`} className="info_button">
+				<p className="info_price">${price}</p>
+				<Link to={`/product/${productId}`} className="info_button">
 					View
 				</Link>
 			</div>
