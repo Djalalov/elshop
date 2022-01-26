@@ -1,7 +1,7 @@
 import "./HomeScreen.css";
 import ScrollUp from "../components/scrollUp";
 import { useEffect } from "react";
-import { useSelector, useDispatch } from "react-dom";
+import { useSelector, useDispatch } from "react-redux";
 
 //Components
 import Product from "../components/Product";
@@ -26,7 +26,7 @@ const HomeScreen = () => {
 				{loading ? (
 					<h2> Loading...</h2>
 				) : error ? (
-					<h2>{error}</h2>
+					<h3>{error}</h3>
 				) : (
 					products.map(product => (
 						<Product
@@ -34,7 +34,7 @@ const HomeScreen = () => {
 							productId={product._id}
 							name={product.name}
 							price={product.price}
-							descriptions={product.descriptions}
+							description={product.description}
 							imageURL={product.imageURL}
 						/>
 					))

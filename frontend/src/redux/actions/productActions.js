@@ -19,6 +19,7 @@ export const getProducts = () => async dispatch => {
 					? error.response.data.message
 					: error.message,
 		});
+		console.log(error);
 	}
 };
 
