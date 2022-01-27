@@ -1,26 +1,30 @@
 import "./ProductScreen.css";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
 
 //Actions
 import { getProductDetails } from "../redux/actions/productActions";
 import { addToCart } from "../redux/actions/cartActions";
 
-function ProductScreen({ match, history }) {
+const ProductScreen = () => {
+	const { id } = useParams();
+	const history = useNavigate();
 	const [qty, setQty] = useState(1);
 	const dispatch = useDispatch();
+
 	const productDetails = useSelector(state => state.getProductDetails);
-	const [loading, error, product] = productDetails;
+	const { loading, error, product } = productDetails;
 
 	useEffect(() => {
-		if (product && match.params.id !== product.id) {
-			dispatch(getProductDetails(match.params.id));
+		if (product && id !== product._id) {
+			dispatch(getProductDetails(id));
 		}
-	}, [dispatch, product, match]);
+	}, [dispatch, product, id]);
 
 	const addToCartHandler = () => {
 		dispatch(addToCart(product._id, qty));
-		history.push("/cart");
+		history("/cart");
 	};
 
 	return (
@@ -33,12 +37,12 @@ function ProductScreen({ match, history }) {
 				<>
 					<div className="productscreen_left">
 						<div className="left_image">
-							<img src={product.imageUrl} alt={product.name} />
+							<img src={product.imageURL} alt={product.title} />
 						</div>
 					</div>
 					<div className="productscreen_right">
 						<div className="up_info">
-							<h2 className="up_title">{product.name} </h2>
+							<h2 className="up_title">{product.title} </h2>
 							<p className="product_price">Price: $ {product.price}</p>
 							<p>Description: {product.description}</p>
 						</div>
@@ -74,6 +78,6 @@ function ProductScreen({ match, history }) {
 			)}
 		</div>
 	);
-}
+};
 
 export default ProductScreen;
