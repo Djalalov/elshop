@@ -5,7 +5,7 @@ const CartItem = ({ item, qtyChangeHandler, removeHandler }) => {
 	return (
 		<div className="cartitem">
 			<div className="cartitem_image">
-				<img src={item.imageURL} alt={item.title} />
+				<img src={item.image} alt={item.image} />
 			</div>
 			<Link to={`/product/${item.product}`} className="cartitem_name">
 				<p>{item.title}</p>
@@ -27,7 +27,7 @@ const CartItem = ({ item, qtyChangeHandler, removeHandler }) => {
 
 			<button
 				className="cartitem_deleteBtn"
-				onClick={e => removeHandler(item.product)}
+				onClick={() => removeHandler(item.product)}
 			>
 				<i className="fas fa-trash"></i>
 			</button>

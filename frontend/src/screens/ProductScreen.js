@@ -26,6 +26,9 @@ const ProductScreen = () => {
 		dispatch(addToCart(product._id, qty));
 		history("/cart");
 	};
+	const goBacktHandler = () => {
+		history("/");
+	};
 
 	return (
 		<div className="productscreen">
@@ -70,6 +73,15 @@ const ProductScreen = () => {
 									className="button_img"
 								>
 									Add to Cart
+								</button>
+							</p>
+							<p>
+								<button
+									type="button"
+									onClick={goBacktHandler}
+									className="button_img"
+								>
+									Go Back
 								</button>
 							</p>
 						</div>
