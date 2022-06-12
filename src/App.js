@@ -1,6 +1,6 @@
 import "./App.css";
 import { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 //Screens
 import HomeScreen from "./screens/HomeScreen";
@@ -16,7 +16,7 @@ function App() {
 	const [sideToggle, setsideToggle] = useState(false);
 	return (
 		<>
-			<BrowserRouter>
+			<HashRouter>
 				<Navbar click={() => setsideToggle(true)} />
 				<SideDrawer show={sideToggle} click={() => setsideToggle(false)} />
 				<Backdrop show={sideToggle} click={() => setsideToggle(false)} />
@@ -27,7 +27,7 @@ function App() {
 						<Route path="/cart" element={<CartScreen />} />
 					</Routes>
 				</main>
-			</BrowserRouter>
+			</HashRouter>
 		</>
 	);
 }
